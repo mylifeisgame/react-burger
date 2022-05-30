@@ -7,4 +7,5 @@ import BurgerIngridient from "./burger-ingridient/burger-ingridient.js";
 import BurgerIngridientList from "./burger-ingridient-list/burger-ingridient-list"
 import BurgerIngredientDetails from './burger-ingredient-details/burger-ingredient-details'
 import Modal from './modal/modal'
+
 export { HeaderLink, AppHeader, AppWrapper, BurgerConstructor, MainWrapper, BurgerIngridient, BurgerIngridientList, BurgerIngredientDetails, Modal };
