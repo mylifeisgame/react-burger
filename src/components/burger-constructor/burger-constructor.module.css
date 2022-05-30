@@ -1,0 +1,5 @@
+.burgerConstructor {
+    width: 600px;
+    height: calc(100vh - 308px);
+    overflow: hidden;
+  }

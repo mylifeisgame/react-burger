@@ -1,0 +1,22 @@
+.ingredientInfo{
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .ingredientName{
+    text-align: center;
+  }
+  
+  .ingredientEnergy {
+    display: grid;
+    grid-auto-flow: column;
+    width: 100%;
+  }
+  
+  .NutritionItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }

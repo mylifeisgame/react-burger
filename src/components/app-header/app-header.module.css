@@ -1,0 +1,19 @@
+.firstTwoBtns {
+  display: flex;
+  flex-basis: 35%;
+}
+.personalInfo {
+  display: flex;
+  flex-basis: 35%;
+  justify-content: right;
+}
+
+.appHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Logo {
+  margin: 0 auto;
+  display: flex;
+}
