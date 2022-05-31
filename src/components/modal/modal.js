@@ -45,12 +45,12 @@ export default function Modal({children, title, onClose}) {
 						'pl-10', 'pr-10',
 					)}>
 						<span className={styles.modalTitleText}>{title}</span>
-						<button
+						<div
 							className={styles.modalTitleIcon}
 							onClick={onClose}
 						>
 							<CloseIcon type="primary" />
-						</button>
+						</div>
 					</p>
 				)}
 				<div className={styles.modalContent}>{children}</div>

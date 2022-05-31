@@ -1,15 +1,21 @@
-.burgerConstructor {
+.BurgerConstructor {
     width: 600px;
     height: calc(100vh - 308px);
     overflow: hidden;
   }
-  .Constructor:not(:last-child) {
-    margin-bottom: 8px;
+  .ConstructorElement:not(:last-child) {
+ margin-bottom:8px;
+ margin-left:10px;
    }
    .burgerConstructorTotal{
     display: flex;
     align-items: center;
     margin-top: 0;
     margin-bottom: 0;
+  }
+  .MakeOrderBtn{
+    display:flex;
+    justify-content:right;
+    align-items:center;
   }
   

@@ -12,36 +12,45 @@ const BurgerConstructor = () => {
   const hideOrderDetails = () => setOrderDetailsDisplay(false)
   return (
     <div className = {styles.BurgerConstructor}>
-      <ConstructorElement
+      <div className = {styles.ConstructorElement}>
+      <ConstructorElement 
         type="top"
         isLocked={true}
         text="Краторная булка N-200i (верх)"
         price={200}
         thumbnail={bun2}
       />
-      
-      <ConstructorElement
+      </div>
+      <div className = {styles.ConstructorElement}>
+      <ConstructorElement className = {styles.ConstructorElement}
         text="Краторная булка N-200i (верх)"
         price={50}
         thumbnail={bun2}
       />
-      <ConstructorElement
+      </div>
+      <div className = {styles.ConstructorElement}>
+      <ConstructorElement className = {styles.ConstructorElement}
         type="bottom"
         isLocked={true}
         text="Краторная булка N-200i (низ)"
         price={200}
         thumbnail={bun2}
       />
+      </div>
       <p className={clsx(
             styles.burgerConstructorTotal,
             'mr-10',
           )}>
-            <span className={`text text_type_digits-medium mr-2`}>610</span>
+           
+          
+          <div className = {styles.MakeOrderBtn}>
+          <span className={`text text_type_digits-medium mr-2`}>450</span>
             <CurrencyIcon type="primary" />
-          </p>
-      <Button type="primary" size="large" onClick={showOrderDetails}>
+          <Button type="primary" size="large" onClick={showOrderDetails}>
             Оформить заказ
           </Button>
+          </div>
+          </p>
       {orderDetailsDisplay && (
         <Modal
           onClose={hideOrderDetails}
