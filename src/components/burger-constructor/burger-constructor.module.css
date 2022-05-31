@@ -3,3 +3,13 @@
     height: calc(100vh - 308px);
     overflow: hidden;
   }
+  .Constructor:not(:last-child) {
+    margin-bottom: 8px;
+   }
+   .burgerConstructorTotal{
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  

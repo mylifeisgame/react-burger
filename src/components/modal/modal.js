@@ -8,8 +8,17 @@ import { CloseIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 
 export default function Modal({children, title, onClose}) {
 	const modalRef = React.useRef(null)
+	const escClose = (e) => {
+		if (e.keyCode === 27) onClose()
+	}
 
+	React.useEffect(() => {
+		document.addEventListener('keydown', escClose)
 
+		return () => {
+			document.removeEventListener('keydown', escClose)
+		}
+	})
 
 
 	return (
@@ -22,12 +31,12 @@ export default function Modal({children, title, onClose}) {
 				ref={modalRef}
 			>
 				{!title && (
-					<button
+					<div
 						className={styles.modalCloseIcon}
 						onClick={onClose}
 					>
 						<CloseIcon type="primary" />
-					</button>
+					</div>
 				)}
 				{title && (
 					<p className={clsx(
