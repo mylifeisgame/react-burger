@@ -1,14 +1,14 @@
-import propTypes from 'prop-types';
+import PropTypes from 'prop-types';
 
-const ingredientsPropTypes = propTypes.shape({
-  name: propTypes.string.isRequired,
-  price: propTypes.number.isRequired,
-  image: propTypes.string.isRequired,
-  image_large: propTypes.string.isRequired,
-  calories: propTypes.number.isRequired,
-  proteins: propTypes.number.isRequired,
-  fat: propTypes.number.isRequired,
-  carbohydrates: propTypes.number.isRequired,
+const ingredientsPropTypes = PropTypes.shape({
+  name: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  image: PropTypes.string.isRequired,
+  image_large: PropTypes.string.isRequired,
+  calories: PropTypes.number.isRequired,
+  proteins: PropTypes.number.isRequired,
+  fat: PropTypes.number.isRequired,
+  carbohydrates: PropTypes.number.isRequired,
 })
 
 export default ingredientsPropTypes

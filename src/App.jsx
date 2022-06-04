@@ -30,7 +30,7 @@ const ingredientsAPi = 'https://norma.nomoreparties.space/api/ingredients ';
         <AppHeader />
         <MainWrapper>
           <BurgerIngredientList ingredients = {ingredients}/>
-        <BurgerConstructor/>
+        <BurgerConstructor ingredients = {ingredients}/>
         </MainWrapper>
       </AppWrapper>
     </div>

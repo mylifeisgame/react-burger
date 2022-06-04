@@ -1,21 +1,55 @@
-.BurgerConstructor {
-    width: 600px;
-    height: calc(100vh - 308px);
-    overflow: hidden;
-  }
-  .ConstructorElement:not(:last-child) {
- margin-bottom:8px;
- margin-left:10px;
-   }
-   .burgerConstructorTotal{
-    display: flex;
-    align-items: center;
-    margin-top: 0;
-    margin-bottom: 0;
-  }
-  .MakeOrderBtn{
-    display:flex;
-    justify-content:right;
-    align-items:center;
-  }
-  
+.burgerConstructor {
+  width: 600px;
+  height: calc(100vh - 308px);
+  overflow: hidden;
+ 
+}
+
+.constructorScroll {
+  overflow-y: scroll;
+}
+
+.constructorScroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.constructorScroll::-webkit-scrollbar-track {
+  width: 8px;
+  background-color: #2F2F37;
+}
+
+.constructorScroll::-webkit-scrollbar-thumb {
+  background-color: #8585AD;
+}
+
+.Bun {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.ingredientItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ingredientItem:not(:last-child) {
+  margin-bottom: 8px;
+ }
+
+.burgerConstructorOrder {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.burgerConstructorTotal{
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.constructorMakeOrder{
+  display: flex;
+  justify-content: flex-end;
+}

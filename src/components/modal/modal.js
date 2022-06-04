@@ -39,7 +39,7 @@ export default function Modal({children, title, onClose}) {
 					</div>
 				)}
 				{title && (
-					<p className={clsx(
+					<div className={clsx(
 						styles.modalTitle,
 						'text', 'text_type_main-large',
 						'pl-10', 'pr-10',
@@ -51,7 +51,7 @@ export default function Modal({children, title, onClose}) {
 						>
 							<CloseIcon type="primary" />
 						</div>
-					</p>
+					</div>
 				)}
 				<div className={styles.modalContent}>{children}</div>
 			</div>

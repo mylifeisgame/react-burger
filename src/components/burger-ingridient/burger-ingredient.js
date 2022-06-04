@@ -1,9 +1,10 @@
 import { React, useState } from "react";
 import ReactDOM from "react-dom";
 import clsx from "clsx";
+import PropTypes from "prop-types";
 import styles from "./burger-ingridient.module.css";
 import {CurrencyIcon} from "@ya.praktikum/react-developer-burger-ui-components";
-const BurgerIngridient = ({ caption,price, thumbnail,onShow }) => {
+const BurgerIngredient = ({ name,price, img,onShow }) => {
     const [Hovered, setHover] = useState(false);
     const MouseHover = () => setHover(!Hovered);
   return (
@@ -21,22 +22,28 @@ const BurgerIngridient = ({ caption,price, thumbnail,onShow }) => {
       onMouseEnter={MouseHover}
       onMouseLeave={MouseHover}
     >
-        <img src = {thumbnail}/>
+        <img src = {img}/>
         <div className = {styles.BurgerIngridientPrice}>
      <p className="text text_type_digits-default">{price}</p>
      <CurrencyIcon type = "primary"/>
      </div>
       <div
         className={clsx(
-          styles.BurgerIngridientCaption,
+          styles.BurgerIngridientname,
           Hovered
             ? "text text_type_main-default text_color_inactive"
             : "text text_type_main-default"
         )}
       >
-        {caption}
+        {name}
       </div>
     </div>
   );
 };
-export default BurgerIngridient;
+BurgerIngredient.propTypes = {
+  img: PropTypes.string.isRequired,
+  price: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  onShow: PropTypes.func.isRequired,
+}
+export default BurgerIngredient;
