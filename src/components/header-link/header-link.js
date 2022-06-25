@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import clsx from "clsx";
 import styles from "./header-link.module.css";
 import {} from "@ya.praktikum/react-developer-burger-ui-components";
-
+import PropTypes from 'prop-types';
 const HeaderLink = ({ icon, first, last, caption, iconHovered }) => {
   const [Hovered, setHover] = useState(false);
   const MouseHover = () => setHover(!Hovered);
@@ -36,4 +36,12 @@ const HeaderLink = ({ icon, first, last, caption, iconHovered }) => {
     </a>
   );
 };
+
+HeaderLink.propTypes = {
+  caption: PropTypes.string.isRequired,
+  icon: PropTypes.element.isRequired,
+  iconHovered: PropTypes.element.isRequired,
+  first: PropTypes.bool,
+  last: PropTypes.bool,
+}
 export default HeaderLink;

@@ -1,7 +1,7 @@
 import React from "react";
 import clsx from "clsx";
 
-import { AppHeader, AppWrapper, BurgerConstructor,MainWrapper, BurgerIngridientList } from "./components/index"
+import { AppHeader, AppWrapper, BurgerConstructor,MainWrapper, BurgerIngredientList } from "./components/index"
 const ingredientsAPi = 'https://norma.nomoreparties.space/api/ingredients ';
   export default function App() {
     const [ingredients, setIngredients] = React.useState([])
@@ -29,8 +29,8 @@ const ingredientsAPi = 'https://norma.nomoreparties.space/api/ingredients ';
       <AppWrapper>
         <AppHeader />
         <MainWrapper>
-          <BurgerIngridientList ingredients = {ingredients}/>
-        <BurgerConstructor/>
+          <BurgerIngredientList ingredients = {ingredients}/>
+        <BurgerConstructor ingredients = {ingredients}/>
         </MainWrapper>
       </AppWrapper>
     </div>
