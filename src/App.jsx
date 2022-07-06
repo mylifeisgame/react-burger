@@ -1,39 +1,32 @@
 import React from "react";
 import clsx from "clsx";
-
-import { AppHeader, AppWrapper, BurgerConstructor,MainWrapper, BurgerIngredientList } from "./components/index"
+import {Provider} from 'react-redux'
+import { AppHeader, AppWrapper, BurgerConstructor,MainWrapper, BurgerIngredientList,store } from "./components/index"
+import {configureStore} from '@reduxjs/toolkit'
+import ingredientsSlice from './index'
 const ingredientsAPi = 'https://norma.nomoreparties.space/api/ingredients ';
   export default function App() {
-    const [ingredients, setIngredients] = React.useState([])
-  
-    React.useEffect(() => {
-      getIngredients()
-    }, [])
-  
-    const getIngredients = async () => {
-      fetch(ingredientsAPi)
-        .then(res => {
-          if (res.ok) {
-              return res.json();
-          }
-          return Promise.reject(`Ошибка ${res.status}`);
-        })
-        .then(data => setIngredients(data.data))
-        .catch(e => {
-          console.log('Ошибка: ' + e.message)
-          console.log(e.response)
-        })
+    const preloadedState = {
+      ingredients : []
     }
+     const store = configureStore({
+      reducer:{ingredients:resetter},
+      middleware: (getDefaultMiddleware) => getDefaultMiddleware(),
+      devTools: process.env.NODE_ENV !== 'production',
+      preloadedState,
+    }) 
   return (
+    <Provider store = {store}>
     <div className="App">
       <AppWrapper>
         <AppHeader />
         <MainWrapper>
-          <BurgerIngredientList ingredients = {ingredients}/>
-        <BurgerConstructor ingredients = {ingredients}/>
+          <BurgerIngredientList ingredients = {store.ingredients}/>
+        <BurgerConstructor ingredients = {store.ingredients}/>
         </MainWrapper>
       </AppWrapper>
     </div>
+    </Provider>
   );
 }
 

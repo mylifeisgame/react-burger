@@ -1,20 +1,26 @@
 import {useState,useRef,useEffect,useCallback} from "react";
+import {useDispatch,useSelector} from 'react-redux'
 import styles from "./burger-ingridient-list.module.css";
 import { getScrollHeight } from "../../utils/scrollbar-function";
-import {
-
+import{
   BurgerIngredientDetails,
   Modal,
- IngredientsCategory
+ IngredientsCategory,
+ fetchIngredients
 } from "../index.js";
 import ingredientsPropTypes from "../../utils/proptypes";
 import clsx from "clsx";
 import PropTypes from "prop-types";
 import { Tab} from "@ya.praktikum/react-developer-burger-ui-components";
 export default function BurgerIngredientList({ ingredients }) {
-
+const dispatch = useDispatch()
   const [currentTab,setCurrent] = useState('buns')
-
+  useEffect(
+    () => {
+      fetchIngredients()
+    },
+    [dispatch]
+  );
   const tabsList = [
     {
       name: 'Булки',
